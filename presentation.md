@@ -61,8 +61,9 @@ ___
 + Modern development methods
     * Distributed VCS (git)
     * Code reviews
-    * Continuous Deployment
+    * Continuous Build/Deployment
     * Automated systems infrastructure (AWS)
+    * Workshops and training
 
 ---
 # Not Fun.
@@ -77,14 +78,35 @@ ___
     * System/Vendor supplied perl
 
 ---
+# This is not *bad* code
+
++ Running without problem for 10 years
++ Almost $100million raised for causes
+
+It's just not fun code to work with.
+
+---
 So how do we make this fun?
 
-+ Address previous problems in existing code? No.
-+ Re-write the app from the ground up? Heck no.
-+ Slowly move functionality into parallel system? That might work...
++ Address previous problems in existing code?
+    * No.
+    * difficult because:
+
++ Re-write the app from the ground up?
+    * Heck no!
+    * I shouldn't have to explain why...
+
++ Gradually migrate functionality into new system?
+    * That might work...
 
 ---
 # Mojolicious?
+
+---
+# Why Not?
+
++ Dancer(2)
++ Catalyst
 
 ---
 ## Mojolicious::Lite

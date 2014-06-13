@@ -1,0 +1,42 @@
+This talk aims to give an overview of the Mojolicious framework with
+a lean towards migrating a legacy CGI application to modern perl dev
+methods.
+
+The talk will explain the backgrounds of the company i am working for,
+the current state of their codebase, and the technical problems faced.
+
+An overview of Mojolicious will be given, although this will not be in
+great detail as the emphasis is on migrating existing code. There will
+be examples of basic mojolicious code included, with explanations, and
+how these can be used as a migration path away from legacy CGI code
+
+An explanation will be given as to why Mojolicious was chosen over other
+frameworks and the lessons learnt in development and deployment of the
+application.
+
+The basic skeleton of the talk is as follows:
+
+    - Who am i?
+    - Why nonprofit?
+    - What is "fun" in perl development terms?
+    - Classic signs of a legacy CGI application
+    - Why Mojolicious?
+    - Basic examples of Mojolicious code
+    - Migrating legacy CGI code to Mojolicious:
+        + Wrapping existing CGI scripts using plugin modules
+        + Reimplementing functionality with modern perl code
+        + Writing tests
+    - Deployment of code to AWS infrastructure
+    - Lessons learnt in developing with Mojolicious
+
+Other topics touched upon will include:
+
+    - Other popular perl frameworks
+    - DBIx::Class
+    - Moose/Mouse/Moo
+    - Test::* modules
+    - Dependency and perl binary management
+
+I expect the talk to last around 30 minutes, and with a Q&A at the end
+that should take it to the 40 minute mark. The full presentation and
+example code will available for view/fork/contribution on github.
