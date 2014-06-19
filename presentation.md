@@ -7,18 +7,18 @@ September 2014
 ---
 ## About Me?
 
-___
+---
 ## About Me?
 
 + Perl developer for 10+ years
 
-___
+---
 ## About Me?
 
 + Perl developer for 10+ years
 + Occasional contributor to CPAN
 
-___
+---
 ## About Me?
 
 + Perl developer for 10+ years (sometimes Python/C)
@@ -29,7 +29,7 @@ ___
     - Primary maintainer of CGI.pm
     - This!
 
-___
+---
 ## About Me?
 
 + Perl developer for 10+ years
@@ -131,17 +131,19 @@ So how do we make this fun?
 ---
 ## Mojolicious Lessons Learnt
 
-___
+---
 ## Mojolicious Lessons Learnt
 
 Mojolicious moves fast
 
-___
+![Mojo changes 2014](/img/mojo_changes.png)
+
+---
 ## Mojolicious Lessons Learnt
 
 Mojolicious documentation
 
-___
+---
 ## Mojolicious Lessons Learnt
 
 Mojolicious defaults (config, exception pages, etc)
