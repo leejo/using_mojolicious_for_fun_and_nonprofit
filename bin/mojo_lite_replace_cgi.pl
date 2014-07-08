@@ -5,7 +5,7 @@ use Mojolicious::Plugin::CGI;
 
 any '/hello_world' => sub {
     my ( $self ) = @_;
-    $self->render( text => "Bonjour à tous" );
+    $self->render( text => "Bonjour à tous pas dès CGI.pm" );
 };
 
 # this is now redundant, the above route will take priority

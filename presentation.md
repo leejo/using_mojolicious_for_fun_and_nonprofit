@@ -8,20 +8,20 @@ September 2014
 ## About Me?
 
 ---
-## About Me?
+## About Me
 
 + Perl developer for 10+ years
 
 ---
-## About Me?
+## About Me
 
 + Perl developer for 10+ years
 + Occasional contributor to CPAN
 
 ---
-## About Me?
+## About Me
 
-+ Perl developer for 10+ years (sometimes Python/C)
++ Perl developer for 10+ years
 + Occasional contributor to CPAN
 + More active recently:
     - Uploading to CPAN ([pause: LEEJO](https://metacpan.org/author/LEEJO))
@@ -30,7 +30,7 @@ September 2014
     - This!
 
 ---
-## About Me?
+## About Me
 
 + Perl developer for 10+ years
 + Occasional contributor to CPAN
@@ -42,15 +42,26 @@ September 2014
 + Moved to Suisse mid-2013
 
 ---
-# Nonprofit?
-
-
----
-## GivenGain Group Services
-
+## Nonprofit?
 
 ---
-# Fun?
+## Nonprofit
+
+### [GivenGain Group Services](http://www.givengain.com/)
+
+The GivenGain Foundation is based in the Canton of Vaud, Switzerland, and is a nonprofit organization registered in Switzerland. The Foundation manages all donations made to GivenGain projects.
+
+Although many other donation management services are for-profit enterprises, the founders of GivenGain believe that managing donations through a supervised Foundation creates greater value for the global non-profit community. The Foundation does not pursue any political, religious or sectarian goal - it serves human rights.
+
+---
+### GivenGain Group Services
+
++ Founded in 2001
++ Offices in Switzerland (Villars-sur-Ollon), South Africa (Stellenbosch), UK (Sevenoaks).
++ 90% perl development
+
+---
+## Fun?
 
 + Modern perl development tools
     * Moose/Moo/Mouse
@@ -66,7 +77,7 @@ September 2014
     * Workshops and training
 
 ---
-# Not Fun.
+## Not Fun.
 
 + "Legacy" perl code
     * No strict or warnings
@@ -78,9 +89,10 @@ September 2014
     * System/Vendor supplied perl
 
 ---
-# This is not *bad* code
+## This is not *bad* code
 
 + Running without problem for 10 years
++ Steady increase in functionality
 + Almost $100million raised for causes
 
 It's just not fun code to work with.
@@ -101,16 +113,17 @@ So how do we make this fun?
     * That might work...
 
 ---
-# Mojolicious?
+## Mojolicious?
 
 ---
-# Why Not?
+## Why Not?
 
 + Dancer(2)
 + Catalyst
 
 ---
 ## Mojolicious
+
 
 ---
 ## Mojolicious::Lite
@@ -160,7 +173,62 @@ morbo hello_world_mojo_lite.pl
 ## CGI.pm and Mojolicious?
 
 ---
-## Mojolicious Lessons Learnt
+## CGI.pm and Mojolicious
+
+Mojolicious::Plugin::CGI
+
+```perl
+    #!/usr/bin/env perl
+
+    use Mojolicious::Lite;
+    use Mojolicious::Plugin::CGI;
+
+    plugin CGI => [ '/hello_world' => "hello_world.cgi" ];
+
+    app->start;
+```
+
+The CGI script:
+
+```perl
+    #!/usr/bin/env perl
+
+    use strict;
+    use warnings;
+    use utf8;
+    use CGI qw/ -utf8 /;
+
+    my $cgi = CGI->new;
+
+    binmode( STDOUT,":utf8" );
+
+    print $cgi->header( -type => 'text/html', -charset => 'utf-8' );
+    print "Bonjour à tous dès CGI.pm";
+```
+
+---
+
+## CGI.pm and Mojolicious
+
+```perl
+    #!/usr/bin/env perl
+
+    use Mojolicious::Lite;
+    use Mojolicious::Plugin::CGI;
+
+    any '/hello_world' => sub {
+        my ( $self ) = @_;
+        $self->render( text => "Bonjour à tous pas dès CGI.pm" );
+    };
+
+    # this is now redundant, the above route will take priority
+    plugin CGI => [ '/hello_world' => "hello_world.cgi" ];
+
+    app->start;
+```
+
+---
+## Mojolicious Lessons Learnt?
 
 ---
 ## Mojolicious Lessons Learnt
@@ -172,7 +240,7 @@ Mojolicious moves fast
 ---
 ## Mojolicious Lessons Learnt
 
-Mojolicious documentation
+Mojolicious documentation and learning curve
 
 ---
 ## Mojolicious Lessons Learnt
