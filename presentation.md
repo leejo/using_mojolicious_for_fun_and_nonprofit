@@ -90,11 +90,12 @@ So how do we make this fun?
 
 + Address previous problems in existing code?
     * No.
-    * difficult because:
+        * difficult, would just be band-aids
+        * no automated tests!
 
 + Re-write the app from the ground up?
     * Heck no!
-    * I shouldn't have to explain why...
+        * I shouldn't have to explain why...
 
 + Gradually migrate functionality into new system?
     * That might work...
