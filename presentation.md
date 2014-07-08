@@ -109,6 +109,9 @@ So how do we make this fun?
 + Catalyst
 
 ---
+## Mojolicious
+
+---
 ## Mojolicious::Lite
 
 ```perl
@@ -122,8 +125,35 @@ So how do we make this fun?
         $self->render( text => "Bonjour à tous" );
     };
 
+    post '/hello_to' => sub {
+        my ( $self ) = @_;
+
+        my $params = $self->req->json;
+
+        $self->render(
+            status => 200,
+            json   => {
+                hello    => $params->{who},
+                complete => Mojo::JSON->true,
+            },
+        );
+    };
+
     app->start;
 ```
+
+And run it:
+
+```
+morbo hello_world_mojo_lite.pl
+```
+
+---
+## [Mojolicious::Lite](http://mojolicio.us/perldoc/Mojolicious/Lite)
+
++ Tiny standalone apps
++ Testing infrastructure (emulators, etc)
++ Great for prototyping: easy to convert to a full-fat app
 
 ---
 ## CGI.pm and Mojolicious?
