@@ -86,7 +86,7 @@ Although many other donation management services are for-profit enterprises, the
     * Own templating language/syntax
     * No real use of perl idioms
     * No automated tests
-    * System/Vendor supplied perl
+    * System/Vendor supplied perl (i.e. old)
 
 ---
 ## This is not *bad* code
@@ -124,6 +124,14 @@ So how do we make this fun?
 ---
 ## Mojolicious
 
+["Next generation web framework"](http://mojolicio.us/)
+
+---
+## Mojolicious
+
+"Next generation web framework"
+
+websockets; event-driven; non-blocking; hot code reloading; parallel requests; concurrent requests; SSL certificate auth; embedded apps; user agent; IPv6; PSGI support; RESTful routes; JSON parsing; DOM parsing; CSS3 selectors; Multipart support; Tag helpers; plugins; perl-ish templates; session management; and on, and on, and on.
 
 ---
 ## Mojolicious::Lite
@@ -175,7 +183,7 @@ morbo hello_world_mojo_lite.pl
 ---
 ## CGI.pm and Mojolicious
 
-Mojolicious::Plugin::CGI
+[Mojolicious::Plugin::CGI](https://metacpan.org/pod/Mojolicious::Plugin::CGI)
 
 ```perl
     #!/usr/bin/env perl
@@ -226,6 +234,54 @@ The CGI script:
 
     app->start;
 ```
+---
+
+## An Example
+
+[http://www.givengain.com/activists/projects/](http://www.givengain.com/activists/projects/)
+
+---
+
+## An Example
+
+[http://www.givengain.com/activists/projects/](http://www.givengain.com/activists/projects/)
+
+Previously:
+
++ 1000 line cgi script (with aforementioned legacy issues)
+  + called by 600 line wrapper script (with aforementioned legacy issues)
+  + using functions from 1000 line library (with afore...)
+  + using 100 line [custom syntax] template
+  + perl 5.10.1 (system perl)
+
+---
+
+## An Example
+
+[http://www.givengain.com/activists/projects/](http://www.givengain.com/activists/projects/)
+
+Now:
+
++ 50 line Mojolicious controller (fully tested)
+  + calls 150 line Projects object (Moose, DBIC, fully tested)
+  + calls 70 line Categories object (Moose, DBIC, fully tested)
+  + uses 125 line [Template::Toolkit] template
+  + perl 5.16.3 and in the process of upgrade to 5.20.0
+
+---
+## An Example
+
+We can easily enable the new code or rollback to the old code:
+
+```perl
+    # new routes
+    $r->route('/activists/projects/')->to('public-activists#projects');
+
+    ...
+
+    # old routes
+    ...
+```
 
 ---
 ## Mojolicious Lessons Learnt?
@@ -240,9 +296,15 @@ Mojolicious moves fast
 ---
 ## Mojolicious Lessons Learnt
 
-Mojolicious documentation and learning curve
+Mojolicious [documentation](http://mojolicio.us/perldoc) and learning curve
 
 ---
 ## Mojolicious Lessons Learnt
 
-Mojolicious defaults (config, exception pages, etc)
+Mojolicious defaults
+
++ server [settings](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad)
++ exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages)
+
+---
+## Questions?
