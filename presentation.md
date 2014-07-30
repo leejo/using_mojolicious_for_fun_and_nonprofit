@@ -303,8 +303,9 @@ Mojolicious [documentation](http://mojolicio.us/perldoc) and learning curve
 
 Mojolicious defaults
 
-+ server [settings](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad)
-+ exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages)
++ server [settings](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad) may not suit you
++ exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages) should be added
++ template [syntax](http://mojolicio.us/perldoc/Mojo/Template) is its own
 
 ---
 ## Questions?
