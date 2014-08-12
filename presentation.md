@@ -284,6 +284,17 @@ We can easily enable the new code or rollback to the old code:
 ```
 
 ---
+## An Example
+
+We can easily test the new code and the old code with no changes to tests:
+
+```
+
+```
+
+Of course the new code has its own unit tests that exist outside the framework.
+
+---
 ## Mojolicious Lessons Learnt?
 
 ---
@@ -306,6 +317,9 @@ Mojolicious defaults
 + server [settings](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad) may not suit you
 + exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages) should be added
 + template [syntax](http://mojolicio.us/perldoc/Mojo/Template) is its own
+
+---
+## In Summary
 
 ---
 ## Questions?
