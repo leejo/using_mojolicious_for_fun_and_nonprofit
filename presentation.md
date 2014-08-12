@@ -364,7 +364,9 @@ Mojolicious defaults
 ## In Summary
 
 + A path to migrate a legacy CGI.pm app
-+ Modern perl development techniques
+    - But with easy rollback if necessary
+    - Removes an awful lot of boilerplate
++ Modern perl development methods
 + Tests!
 
 ---
