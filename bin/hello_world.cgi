@@ -15,4 +15,4 @@ print $cgi->header(
     -charset => 'utf-8',
 );
 
-print "Bonjour à tous dès CGI.pm";
+print "Bonjour à tous depuis CGI.pm";
