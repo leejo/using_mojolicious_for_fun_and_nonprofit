@@ -211,7 +211,7 @@ The CGI script:
     binmode( STDOUT,":utf8" );
 
     print $cgi->header( -type => 'text/html', -charset => 'utf-8' );
-    print "Bonjour à tous dès CGI.pm";
+    print "Bonjour à tous depuis CGI.pm";
 ```
 
 ---
@@ -226,7 +226,7 @@ The CGI script:
 
     any '/hello_world' => sub {
         my ( $self ) = @_;
-        $self->render( text => "Bonjour à tous pas dès CGI.pm" );
+        $self->render( text => "Bonjour à tous PAS depuis CGI.pm" );
     };
 
     # this is now redundant, the above route will take priority
