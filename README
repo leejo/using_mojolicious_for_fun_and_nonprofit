@@ -5,7 +5,7 @@ To view the talk slides you will need to install the module App::revealup
 
 Then run:
 
-revealup serve presentation.md \
+revealup server presentation.md \
 	--port 5000 \
 	--transition none \
 	--width 960 \
