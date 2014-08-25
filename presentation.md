@@ -248,10 +248,10 @@ The CGI script:
 
 Previously:
 
-+ 1000 line cgi script (with aforementioned legacy issues)
-  + called by 600 line wrapper script (with aforementioned legacy issues)
-  + using functions from 1000 line library (with afore...)
-  + using 100 line [custom syntax] template
++ 1000 lines cgi script (with aforementioned legacy issues)
+  + called by 600 lines wrapper script (with aforementioned legacy issues)
+  + using functions from 1000 lines library (with afore...)
+  + using 100 lines [custom syntax] template
   + perl 5.10.1 (system perl)
 
 ---
@@ -262,10 +262,10 @@ Previously:
 
 Now:
 
-+ 50 line Mojolicious controller (fully tested)
-  + calls 150 line Projects object (Moose, DBIC, fully tested)
-  + calls 70 line Categories object (Moose, DBIC, fully tested)
-  + uses 125 line [Template::Toolkit] template
++ 50 lines Mojolicious controller (fully tested)
+  + calls 150 lines Projects object (Moose, DBIC, fully tested)
+  + calls 70 lines Categories object (Moose, DBIC, fully tested)
+  + uses 125 lines [Template::Toolkit] template
   + perl 5.16.3 and in the process of upgrade to 5.20.0
 
 ---
