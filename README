@@ -1,9 +1,9 @@
 A talk planned for the 2014 Swiss perl workshop (and perhaps the 2014 Austrian
-perl workshop also)
+perl workshop also, and possibly maybe the 2014 London perl workshop (maybe))
 
 To view the talk slides you will need to install the module App::revealup
 
-Then run:
+Then run (server may need to be serve depending on the version of App::revealup):
 
 revealup server presentation.md \
 	--port 5000 \

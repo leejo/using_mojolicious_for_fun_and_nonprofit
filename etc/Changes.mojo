@@ -1,4 +1,161 @@
 
+5.35  2014-08-30
+  - Improved monkey_patch to be able to name generated functions.
+
+5.34  2014-08-29
+  - Added original_remote_address attribute to Mojo::Transaction.
+  - Fixed bug where Mojolicious::Commands would change @ARGV when loaded.
+
+5.33  2014-08-24
+  - Improved Mojo::Date to be able to handle higher precision times.
+  - Improved Mojo::ByteStream performance.
+
+5.32  2014-08-21
+  - Added to_datetime method to Mojo::Date.
+  - Improved Mojo::Date to support RFC 3339.
+
+5.31  2014-08-19
+  - Improved Mojolicious::Static to allow custom content types.
+  - Improved url_for performance.
+
+5.30  2014-08-17
+  - Improved Mojolicious::Static to only handle GET and HEAD requests.
+  - Improved Mojo::URL performance.
+  - Improved url_for performance slightly.
+  - Fixed bug where DATA sections sometimes got corrupted after forking, which
+    caused applications to fail randomly.
+  - Fixed Mojo::IOLoop::Client to use a timeout for every connection.
+
+5.29  2014-08-16
+  - Added helpers method to Mojolicious::Controller.
+  - Improved performance of .ep templates slightly.
+  - Fixed "0" value bug in Mojolicious::Plugin::EPRenderer.
+
+5.28  2014-08-13
+  - Improved performance of nested helpers and helpers in templates
+    significantly.
+  - Improved Mojo::JSON to generate smaller JSON by not escaping the "/"
+    character.
+
+5.27  2014-08-11
+  - Added support for nested helpers.
+  - Added get_helper method to Mojolicious::Renderer.
+  - Added n function to ojo.
+  - Fixed bug in Mojolicious::Routes::Match where placeholder values got
+    merged too early.
+
+5.26  2014-08-09
+  - Improved WebSocket performance.
+  - Fixed proxy exception handling bug in Mojo::UserAgent.
+  - Fixed bug where Mojo::Transaction::WebSocket would build incorrect frames
+    if the FIN bit was not set.
+
+5.25  2014-08-07
+  - Added reduce method to Mojo::Collection. (sri, batman)
+  - Added if_none_match method to Mojo::Headers.
+  - Added is_fresh method to Mojolicious::Static.
+  - Added is_fresh helper to Mojolicious::Plugin::DefaultHelpers.
+  - Improved Mojolicious to use MyApp::Controller namespace by default and
+    encourage its use in the documentation.
+  - Improved sort method in Mojo::Collection to use $a and $b. (batman)
+  - Improved Mojolicious::Static to support ETag and If-None-Match headers.
+  - Improved documentation browser CSS.
+  - Fixed escaping bugs in Mojo::DOM::CSS.
+
+5.24  2014-08-02
+  - Improved url_escape performance slightly.
+  - Fixed memory leak in Mojo::IOLoop::Client.
+  - Fixed bug where ojo would sometimes die silently.
+
+5.23  2014-07-31
+  - Improved router performance.
+  - Improved routes command to show format regular expression separately.
+  - Fixed partial route bug in Mojolicious::Routes::Match.
+  - Fixed format detection bug in Mojolicious::Routes::Pattern.
+
+5.22  2014-07-30
+  - Added SOCKS5 support to Mojo::UserAgent.
+  - Added socks_address, socks_pass, socks_port and socks_user options to
+    Mojo::IOLoop::Client::connect.
+  - Improved documentation browser CSS.
+
+5.21  2014-07-27
+  - Improved handling of Pod::Simple::XHTML 3.09 dependency.
+  - Improved documentation browser CSS.
+
+5.20  2014-07-27
+  - Fixed a few bugs in Mojolicious::Plugin::PODRenderer by switching from
+    Pod::Simple::HTML to Pod::Simple::XHTML.
+  - Fixed Perl 5.18.x compatibility.
+
+5.19  2014-07-26
+  - Improved support for Unicode anchors in Mojolicious::Plugin::PODRenderer.
+  - Fixed is_readable scalability problems in Mojo::Reactor.
+
+5.18  2014-07-25
+  - Improved is_readable performance in Mojo::Reactor.
+
+5.17  2014-07-24
+  - Welcome to the Mojolicious core team Jan Henning Thorsen.
+  - Added val method to Mojo::DOM. (batman, sri)
+  - Improved Mojo::Collection performance.
+  - Fixed support for Unicode anchors in Mojolicious::Plugin::PODRenderer.
+
+5.16  2014-07-21
+  - Improved Mojo::Asset::File to allow appending data to existing files.
+    (iakuf, sri)
+
+5.15  2014-07-17
+  - Improved Mojo::DOM::HTML performance slightly.
+  - Fixed small selector bug in get command.
+
+5.14  2014-07-14
+  - Improved all_text performance in Mojo::DOM.
+  - Improved Mojo::DOM::CSS, Mojo::DOM::HTML and Mojo::JSON performance with
+    regular expression optimizations.
+  - Fixed deep recursion warnings in Mojo::DOM and Mojo::DOM::HTML. (jberger)
+
+5.13  2014-07-13
+  - Added json_like, json_message_like, json_message_unlike and json_unlike
+    methods to Test::Mojo.
+  - Improved HTML5.1 compliance of Mojo::DOM::HTML.
+  - Fixed bug where Mojo::UserAgent would keep too many connections alive.
+  - Fixed Mojo::Reactor::Poll bug where watchers were active after they have
+    been removed. (jberger)
+
+5.12  2014-07-04
+  - Fixed a few multipart form handling bugs.
+  - Fixed AUTOLOAD bug in Mojo::Collection where it would behave differently
+    than calling pluck directly.
+
+5.11  2014-07-02
+  - Moved reverse_proxy attribute from Mojo::Server::Daemon to Mojo::Server.
+  - Added delay and inactivity_timeout helpers to
+    Mojolicious::Plugin::DefaultHelpers.
+  - Improved error method in Mojolicious::Validator::Validation to return
+    field names when called without arguments.
+  - Fixed "0" value bug in Mojo::UserAgent::Transactor.
+
+5.10  2014-06-28
+  - Added cleanup attribute to Mojo::Server::Prefork.
+  - Improved Mojo::Server::Prefork to keep sending heartbeat messages when
+    stopping gracefully.
+  - Fixed small bug where Mojo::Server::Daemon was too eager to reconfigure
+    Mojo::IOLoop.
+  - Fixed small bug where Hypnotoad would clean up process id and lock files
+    too early.
+
+5.09  2014-06-24
+  - Improved .ep templates to make the current controller available as $c.
+
+5.08  2014-06-17
+  - Added reset method to Mojo::IOLoop.
+  - Added reset method to Mojo::Reactor.
+  - Added reset method to Mojo::Reactor::Poll.
+
+5.07  2014-06-13
+  - Fixed RFC 7230 compliance bugs in Mojo::Headers.
+
 5.06  2014-06-11
   - Added deserialize and serialize attributes to Mojolicious::Sessions.
   - Improved redirect_to to behave more like url_for.
@@ -36,7 +193,7 @@
     invocant.
   - Changed return value of path_for method in Mojolicious::Routes::Match.
   - Changed return value and arguments of error method in Mojo::Message.
-  - Removed deprecated support for "X-Forwarded-HTTPS".
+  - Removed deprecated support for X-Forwarded-HTTPS.
   - Removed return values from wait method in Mojo::IOLoop::Delay.
   - Removed list context support from header method in Mojo::Headers.
   - Removed generate_port method from Mojo::IOLoop.
@@ -74,8 +231,7 @@
   - Improved accept performance in Mojo::IOLoop::Server.
 
 4.97  2014-04-30
-  - Deprecated support for "X-Forwarded-HTTPS" in favor of
-    "X-Forwarded-Proto".
+  - Deprecated support for X-Forwarded-HTTPS in favor of X-Forwarded-Proto.
   - Added multi-name support to param method in Mojo::Parameters.
 
 4.96  2014-04-28
@@ -2546,7 +2702,7 @@
   - Fixed size limits in message parser.
 
 1.18  2011-04-19
-  - Added support for "X-Forwarded-HTTPS" and "X-Forwarded-Host" headers.
+  - Added support for X-Forwarded-HTTPS and X-Forwarded-Host headers.
   - Added argument localization to the include helper. (crab, moritz, sri)
   - Fixed test case.
 
@@ -3076,7 +3232,7 @@
       print $client->get('http://search.cpan.org')->res->body;
       my $tx = $client->post_form('http://kraih.com', {q => 'mojo'});
   - Made plugins much more configurable.
-  - Improved PSGI support and added "psgi" command.
+  - Improved PSGI support and added psgi command.
   - Added automatic environment detection for Plack based servers, there is
     no technical way to detect all PSGI compliant servers yet though. That
     means "plackup myapp.pl" and "plackup script/myapp" should just work.
@@ -3103,8 +3259,8 @@
   - Added I18N support. (vti, memowe)
   - Added template detection again, you can now just mix multiple template
     engines and the renderer will automatically pick the right template. So
-    you don't have to use the "handler" argument anymore, even though it's
-    still available and overrides auto detection.
+    you don't have to use the handler argument anymore, even though it's still
+    available and overrides auto detection.
   - Added Flash Policy Server example. (xantus)
   - Added more reference docs.
   - Added ".gitignore" generator command. (marcus)
@@ -3385,8 +3541,8 @@
   - Merged eplite and epl, this change is not backwards compatible, you will
     have to rename all your eplite templates to epl.
   - Simplified MojoX::Renderer, this change is not backwards compatible!
-    Handler can no longer be detected, that means "default_handler" or the
-    "handler" argument are required. The template argument can no longer
+    Handler can no longer be detected, that means default_handler or the
+    handler argument are required. The template argument can no longer
     contain format or handler.
       $self->render(template => 'foo.html.epl');
     becomes

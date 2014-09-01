@@ -2,7 +2,7 @@ Using Mojolicious for Fun and Nonprofit
 
 [Lee Johnson](http://leejo.github.io)
 
-September 2014
+Swiss Perl Workshop September 2014
 
 ---
 ## About Me?
@@ -58,7 +58,7 @@ Although many other donation management services are for-profit enterprises, the
 
 + Founded in 2001
 + Offices in Switzerland (Villars-sur-Ollon), South Africa (Stellenbosch), UK (Sevenoaks).
-+ 90% perl development
++ 95%+ perl development
 
 ---
 ## Fun?
@@ -342,6 +342,8 @@ Of course the new code has its own unit tests that exist outside the framework.
 Mojolicious moves fast
 
 ![Mojo changes 2014](/img/mojo_changes.png)
+
+(This has implications that go beyond your code)
 
 ---
 ## Mojolicious Lessons Learnt
