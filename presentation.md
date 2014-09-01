@@ -26,6 +26,7 @@ Swiss Perl Workshop September 2014
 + More active recently:
     - Uploading to CPAN ([pause: LEEJO](https://metacpan.org/author/LEEJO))
     - Forky forky ([github: leejo](https://github.com/leejo))
+    - [Blog](http://leejo.github.io)
     - Primary maintainer of CGI.pm
     - This!
 
@@ -37,6 +38,7 @@ Swiss Perl Workshop September 2014
 + More active recently:
     - Uploading to CPAN ([pause: LEEJO](https://metacpan.org/author/LEEJO))
     - Forky forky ([github: leejo](https://github.com/leejo))
+    - [Blog](http://leejo.github.io)
     - Primary maintainer of CGI.pm
     - This!
 + Moved to Suisse mid-2013
