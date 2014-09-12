@@ -339,6 +339,23 @@ Of course the new code has its own unit tests that exist outside the framework.
 ## Mojolicious Lessons Learnt?
 
 ---
+## Mojolicious Lessons Learnt?
+
+Mojolicious moves fast
+
+```
+Day changed to 12 sep 2014
+...
+03:07 <+cpan_mojo> Mojolicious 5.40 by Sebastian Riedel -
+                   http://metacpan.org/release/SRI/Mojolicious-5.40
+03:10 < sri> \o\
+03:10 < sri> /o/
+03:11 < sri> BREAK ALL THE THINGS
+
+[3:#mojo(+n)]
+```
+
+---
 ## Mojolicious Lessons Learnt
 
 Mojolicious moves fast
