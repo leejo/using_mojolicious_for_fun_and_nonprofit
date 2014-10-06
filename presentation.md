@@ -2,7 +2,9 @@ Using Mojolicious for Fun and Nonprofit
 
 [Lee Johnson](http://leejo.github.io)
 
-Swiss Perl Workshop September 2014
+~~Swiss Perl Workshop September 2014~~
+
+Austrian Perl Workshop October 2014
 
 ---
 ## About Me?
@@ -61,6 +63,9 @@ Although many other donation management services are for-profit enterprises, the
 + Founded in 2001
 + Offices in Switzerland (Villars-sur-Ollon), South Africa (Stellenbosch), UK (Sevenoaks).
 + 95%+ perl development
+
+---
+## Fun?
 
 ---
 ## Fun?
@@ -375,7 +380,7 @@ Mojolicious [documentation](http://mojolicio.us/perldoc) and learning curve
 Mojolicious defaults
 
 + server [settings](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad) may not suit you
-+ exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages) should be [added](http://cpants.cpanauthors.org/dist/foo-bar-baz)
++ exception [pages](http://mojolicio.us/perldoc/Mojolicious/Guides/Rendering#Rendering_exception_and_not_found_pages) should be [added](http://blog.kraih.com/post/43196937506/a-missing-raptor-and-the-mojolicious-user-experience)
 + template [syntax](http://mojolicio.us/perldoc/Mojo/Template) is its own
 
 ---

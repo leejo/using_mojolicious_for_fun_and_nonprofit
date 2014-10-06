@@ -1,4 +1,64 @@
 
+5.47  2014-09-28
+  - Improved url_for performance.
+
+5.46  2014-09-26
+  - PAUSE lost the previous release.
+
+5.45  2014-09-26
+  - Deprecated Mojolicious::Routes::Route::has_conditions.
+  - Added extracting attribute to Mojo::UserAgent::CookieJar.
+  - Improved performance of next, next_sibling, previous and previous_sibling
+    methods in Mojo::DOM significantly.
+  - Improved Mojo::Cache to allow caching to be disabled. (mvgrimes, sri)
+  - Fixed url_for bug where deeply nested WebSocket routes would not work
+    correctly.
+
+5.44  2014-09-23
+  - Fixed bug in Mojolicious::Renderer that prevented proxy objects from being
+    reused.
+
+5.43  2014-09-22
+  - Updated Makefile.PL for version 2 of the CPAN distribution metadata
+    specification.
+  - Improved get command to not depend on Content-Type headers for
+    differentiating between JSON and HTML/XML.
+
+5.42  2014-09-17
+  - Fixed url_for bug where an unnecessary slash could be rendered before
+    formats.
+
+5.41  2014-09-13
+  - Deprecated Mojolicious::Controller::render_static in favor of
+    reply->static helper.
+  - Added mtime attribute to Mojo::Asset::Memory.
+  - Added mtime method to Mojo::Asset and Mojo::Asset::File.
+  - Added reply->asset and reply->static helpers to
+    Mojolicious::Plugin::DefaultHelpers.
+  - Fixed bug in Mojo::UserAgent where connections would sometimes not get
+    closed correctly.
+
+5.40  2014-09-12
+  - Deprecated Mojo::EventEmitter::emit_safe.
+  - Added reply->exception and reply->not_found helpers to
+    Mojolicious::Plugin::DefaultHelpers.
+  - Improved all events to handle exceptions the same.
+
+5.39  2014-09-07
+  - Improved decamelize performance.
+  - Fixed bug in Mojo::Template where newline characters could get lost.
+
+5.38  2014-09-05
+  - Improved routes command to use new terminology for flags.
+  - Fixed bug in Mojo::Util where tablify could not handle empty columns.
+
+5.37  2014-09-03
+  - Improved Mojo::Template performance slightly.
+  - Fixed .ep template bug where the stash value "c" could no longer be used.
+
+5.36  2014-09-02
+  - Improved Mojo::Template performance.
+
 5.35  2014-08-30
   - Improved monkey_patch to be able to name generated functions.
 
@@ -413,7 +473,7 @@
   - Improved router to allow format detection for bridges.
 
 4.68  2014-01-22
-  - Added Mojo::DOM::Node.
+  - Added module Mojo::DOM::Node.
   - Added contents and node methods to Mojo::DOM.
   - Removed deprecated http_proxy, https_proxy, name and no_proxy attributes
     from Mojo::UserAgent.
@@ -1485,7 +1545,7 @@
 
 2.93  2012-05-05
   - Added remove method to Mojolicious::Routes::Route.
-  - Improved 32bit Perl support of Mojo::Transaction::WebSocket.
+  - Improved 32-bit Perl support of Mojo::Transaction::WebSocket.
     (mikemagowan, sri)
   - Improved exception handling of application and configuration file loaders.
   - Improved exception handling of Mojolicious::Plugin::I18N.
@@ -1640,7 +1700,7 @@
 2.65  2012-03-22
   - Deprecated Mojo::IOLoop::drop in favor of Mojo::IOLoop::remove.
   - Renamed Mojo::Reactor::drop to Mojo::Reactor::remove.
-  - Added Mojo::Reactor::Poll.
+  - Added module Mojo::Reactor::Poll.
   - Added one_tick method to Mojo::Reactor and Mojo::Reactor::EV.
   - Removed experimental status from Mojo::IOLoop::Client.
   - Removed experimental status from Mojo::IOLoop::Server.
@@ -1660,7 +1720,7 @@
 
 2.63  2012-03-20
   - Renamed Mojo::IOWatcher to Mojo::Reactor.
-  - Added Mojolicious::Routes::Route.
+  - Added module Mojolicious::Routes::Route.
   - Added find and root methods to Mojolicious::Routes::Route.
   - Improved form_for helper to automatically add method="POST" attributes
     when necessary.
@@ -2424,7 +2484,7 @@
   - Modernized Mojo::HelloWorld.
   - Improved HTML healing capabilities of Mojo::DOM::HTML.
   - Improved HTML rendering in Mojo::DOM::HTML.
-  - Improved 64bit support in Mojo::Transaction::WebSocket.
+  - Improved 64-bit support in Mojo::Transaction::WebSocket.
   - Fixed memory leak in Mojo::IOLoop::Client.
   - Fixed memory leak in Mojolicious.
   - Fixed small bug in Mojo::IOLoop::Server.
@@ -2669,7 +2729,7 @@
     available.
   - Updated jQuery to version 1.6.
   - Fixed PSGI read error handling.
-  - Fixed 64bit WebSocket message bug.
+  - Fixed 64-bit WebSocket message bug.
   - Fixed small Windows bug.
 
 1.22  2011-05-02
@@ -3744,7 +3804,7 @@
   - Added layout support to MojoX::Renderer.
   - Made render call optional.
   - Added format support to MojoX::Routes.
-  - Added Mojo::Loader::Exception.
+  - Added module Mojo::Loader::Exception.
   - Added wildcard symbol support to MojoX::Routes and rewrote many routes
     internals.
   - Added Makefile.PL generator.
@@ -3755,7 +3815,7 @@
   - Added encoding support to Mojo::Template and made "utf8" the default.
   - Added HEAD support to Mojo::Server::Daemon. (acajou)
   - Added new relaxed placeholder to MojoX::Routes::Pattern.
-  - Added Mojo::Template::Exception.
+  - Added module Mojo::Template::Exception.
   - Added HEAD support to the Mojo::Transaction state machine and related
     modules. (acajou)
   - Added safe_post option to Mojo::Pipeline. (acajou)
@@ -3796,10 +3856,10 @@
 
 0.9  2008-12-01
   - Added modes to Mojolicious.
-  - Added Mojo::Log and log support for Mojo/Mojolicious.
+  - Added module Mojo::Log and log support for Mojo/Mojolicious.
+  - Added module MojoX::Context.
   - Changed MojoX::Renderer and Mojo::Template API to make catching errors
     easier, we now use a scalar ref for results like most template engines.
-  - Added MojoX::Context.
   - Added multi-level controller class support to Mojolicious.
   - MojoX::Dispatcher::Routes should be able to fail.
   - Added diagnostics functions to Mojo::HelloWorld.
