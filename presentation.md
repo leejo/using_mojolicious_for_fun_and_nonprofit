@@ -363,9 +363,9 @@ Day changed to 12 sep 2014
 ---
 ## Mojolicious Lessons Learnt
 
-Mojolicious moves fast
+Mojolicious moves fast ([bigger](img/mojo_changes_big.png))
 
-![Mojo changes 2014](/img/mojo_changes.png)
+![Mojo changes 2014](img/mojo_changes.png)
 
 (This has implications that go beyond your code)
 
