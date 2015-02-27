@@ -8,27 +8,47 @@ from optparse import OptionParser
 from dateutil.parser import parse
 from matplotlib.dates import date2num, num2date
 
-
 parser = OptionParser()
 parser.add_option( "-c",dest="changes",help="Changes file" )
+parser.add_option( "-v",dest="version",help="Start Version" )
 
 ( options,args ) = parser.parse_args()
 
 infile   = options.changes;
+if options.version:
+	version = options.version;
+else:
+	version = 0.2
 changes  = {}
+
 keywords = {
 	'Updated'    : 'white',
 	'Fixed'      : 'white',
 	'Improved'   : 'white',
 	'Relaxed'    : 'white',
 	'Added'      : 'white',
+	'Simplified' : 'white',
+	'Cleaned'    : 'white',
+	'Reduced'    : 'white',
+	'Increased'  : 'white',
+	'Refactored' : 'white',
+	'Optimized'  : 'white',
+	'Rewrote'    : 'white',
+	'Modernized' : 'white',
 
+	'Deprecated' : 'gray',
+
+	'Moved'      : 'black',
+	'Disabled'   : 'black',
+	'Combined'   : 'black',
 	'Changed'    : 'black',
 	'Replaced'   : 'black',
 	'Merged'     : 'black',
-	'Deprecated' : 'black',
 	'Removed'    : 'black',
+	'Renamed'    : 'black',
 }
+
+latest_version = 0
 
 with open( infile ) as inf:
 
@@ -40,20 +60,23 @@ with open( infile ) as inf:
 		if len( words ) > 1:
 
 			if words[0] != "":
-				version = words[0]
+				change_version = words[0]
 				date    = date2num( parse( words[2] ) )
 
-				if '2013' in words[2]:
+				if change_version == version:
 					break
 				changes[date] = {}
 
 			elif words[2] == "-":
+				if latest_version == 0:
+					latest_version = change_version
 				change = words[3]
 				if change in changes[date].keys():
 					changes[date][change] = changes[date][change] + 1
 				else:
 					changes[date][change] = 1
 
+version   = change_version
 last_plot = []
 plots     = []
 keys      = []
@@ -72,7 +95,8 @@ for keyword in sorted(keywords.keys()):
 	if len( last_plot ) == 0:
 		last_plot = [ 0 for date in changes.keys() ]
 
-	print this_plot
+	#print this_plot
+	#print last_plot
 
 	plots.append( plt.bar(
 		[ num2date( date ) for date in sorted(changes.keys()) ],
@@ -81,7 +105,8 @@ for keyword in sorted(keywords.keys()):
 		color=keywords[keyword]
 	) )
 
-	last_plot=this_plot
+	for i in range( len( this_plot ) ):
+		last_plot[i] = last_plot[i] + this_plot[i]
 
-plt.title('Mojolicious Changes (since start of year)')
+plt.title('Mojolicious Changes (version %s to %s)' % ( version,latest_version ))
 plt.show()

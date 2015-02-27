@@ -23,11 +23,12 @@ while ( my $module = $rs->next ) {
 say scalar( @plugins ) . " Mojolicious plugin modules found...";
 say "Installing latest Mojolicious...";
 
+system( "perl","-V" );
 system( "cpanm","Mojolicious" );
 
 foreach my $plugin ( @plugins ) {
 
-	system( "cpanm",$plugin );
+	system( "cpanm","--reinstall",$plugin );
 
 	if ( $? ) {
 		push( @failed,$plugin );
