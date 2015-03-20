@@ -51,7 +51,7 @@ Austrian Perl Workshop October 2014
 ---
 ## Nonprofit
 
-### [GivenGain Group Services](http://www.givengain.com/)
+### [GivenGain Group Services](http://www.g3s.ch/)
 
 The GivenGain Foundation is based in the Canton of Vaud, Switzerland, and is a nonprofit organization registered in Switzerland. The Foundation manages all donations made to GivenGain projects.
 
