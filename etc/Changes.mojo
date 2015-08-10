@@ -1,5 +1,91 @@
 
-6.01  2015-02-27
+6.15  2015-08-08
+  - Fixed warnings in Mojo::DOM.
+
+6.14  2015-07-12
+  - Improved app generator command not to create a log directory.
+
+6.13  2015-07-08
+  - Added support for validating file uploads.
+  - Added upload check to Mojolicious::Validator.
+  - Improved error messages for broken applications in Mojo::Server. (mst)
+  - Improved subscribers method in Mojo::EventEmitter to allow subscribers to be
+    modified more easily.
+
+6.12  2015-06-18
+  - Welcome to the Mojolicious core team Dan Book.
+  - Added TO_JSON method to Mojo::Collection. (wttw)
+  - Added find_packages function to Mojo::Loader.
+  - Fixed bug in Mojo::Message where multipart content would get downgraded
+    unnecessarily.
+
+6.11  2015-05-16
+  - Deprecated Mojo::Content::build_body and Mojo::Content::build_headers.
+  - Added headers_contain method to Mojo::Content.
+  - Updated jQuery to version 2.1.4.
+  - Fixed indentation of ASCII art in documentation browser. (jberger)
+  - Fixed bug where inline was not considered a reserved stash value.
+
+6.10  2015-04-26
+  - Removed support for user/group switching, because it never worked
+    correctly, which means that this security feature has become an attack
+    vector itself. If you depend on this functionality, you can now use the
+    CPAN module Mojolicious::Plugin::SetUserGroup instead.
+  - Removed group and user attributes from Mojo::Server.
+  - Removed setuidgid method from Mojo::Server.
+  - Removed group and user settings from Hypnotoad.
+  - Removed -g/--group and -u/--user options from daemon and prefork commands.
+  - Added next_tick method to Mojo::Reactor::Poll.
+  - Improved next_tick callbacks to run in the same order in which they were
+    registered.
+
+6.09  2015-04-25
+  - Improved HTML Living Standard compliance of Mojo::Parameters. (riche, sri)
+  - Fixed bug in Mojolicious::Types where the json MIME type did not specify a
+    charset. (kaktus)
+
+6.08  2015-04-09
+  - Added is_established and server_open methods to
+    Mojo::Transaction::WebSocket.
+  - Improved finish and send methods in Mojolicious::Controller to
+    automatically establish the WebSocket connection if necessary.
+  - Improved pod_to_html helper in Mojolicious::Plugin::PODRenderer to unindent
+    verbatim blocks. (OlegG)
+
+6.07  2015-04-07
+  - Fixed Windows bug in "daemon.t".
+
+6.06  2015-04-06
+  - Added element_count_is method to Test::Mojo. (Zoffix)
+  - Added "chat.pl" to example scripts.
+  - Improved Mojo::DOM::CSS to handle attribute selectors with single quotes
+    correctly.
+
+6.05  2015-03-24
+  - Fixed circular require bug in Mojo::Base and Mojo::Util.
+
+6.04  2015-03-23
+  - Improved Mojo::Reactor::EV and Mojo::Reactor::Poll to fail more
+    consistently.
+  - Improved Mojo::Base performance slightly.
+  - Fixed a few bugs in Mojo::DOM::CSS that required class, id and attribute
+    selectors, as well as pseudo-classes, to be in a specific order.
+
+6.03  2015-03-16
+  - Added support for overriding the HTTP request method with the _method query
+    parameter.
+  - Added suggested_method method to Mojolicious::Routes::Route.
+  - Improved portability of some tests.
+
+6.02  2015-03-09
+  - Added daemon attribute to Mojo::Server::Morbo.
+  - Improved portability of Mojo::Server::Morbo.
+  - Fixed empty template handling in Mojo::Template.
+
+6.01  2015-03-03
+  - Added content_with helper to Mojolicious::Plugin::DefaultHelpers.
+  - Relaxed request-line handling in Mojo::Message::Request.
+  - Fixed code name in version command and built-in templates.
 
 6.0  2015-02-26
   - Code name "Clinking Beer Mugs", this is a major release.
@@ -33,12 +119,12 @@
   - Renamed extracting attribute in Mojo::UserAgent::CookieJar to collecting.
   - Renamed types attribute in Mojolicious::Types to mapping.
   - Renamed current attribute in Mojolicious::Routes::Match to position.
-  - Renamed pattern attribute in Mojolicious::Routes::Route to unparsed.
+  - Renamed pattern attribute in Mojolicious::Routes::Pattern to unparsed.
   - Renamed all_contents, contents, following_siblings, match, next_sibling,
     node, preceding_siblings, previous_sibling and type methods in Mojo::DOM to
     descendant_nodes, child_nodes, following_nodes, matches, next_node, type,
     preceding_nodes, previous_node and tag.
-  - Renamed match method in Mojo::DOM::CSS to matches.
+  - Renamed match method in Mojo::DOM and Mojo::DOM::CSS to matches.
   - Renamed extract and inject methods in Mojo::UserAgent::CookieJar to collect
     and prepare.
   - Renamed inject method in Mojo::UserAgent::Proxy to prepare.
@@ -211,7 +297,7 @@
 
 5.66  2014-11-26
   - Improved many WebSocket tests in Test::Mojo to be able to fail gracefully.
-  - Fixed bug in Mojo::DOM::CSS where the :empty pseudo class would not ignore
+  - Fixed bug in Mojo::DOM::CSS where the :empty pseudo-class would not ignore
     comments and processing instructions.
 
 5.65  2014-11-24
@@ -3009,7 +3095,7 @@
   - Reverted deprecation of Perl 5.8.x support, by popular demand.
   - Added FAQ entry to clarify the Perl 5.8.x situation.
   - Fixed case-sensitivity of Mojo::DOM in XML mode.
-  - Fixed pseudo class case handling in Mojo::DOM. (Akron)
+  - Fixed pseudo-class case handling in Mojo::DOM. (Akron)
 
 1.3  2011-05-05
   - Code name "Tropical Drink", this is a major release.
@@ -3376,7 +3462,7 @@
   - Added x function to ojo. (DaTa)
   - Added failed request warnings to ojo. (marcus)
   - Added support for selector groups to Mojo::DOM.
-  - Added more attribute selectors, pseudo classes and combinators to
+  - Added more attribute selectors, pseudo-classes and combinators to
     Mojo::DOM.
   - Added support for mode specific configuration files to
     Mojolicious::Plugin::JsonConfig. (marcus)
